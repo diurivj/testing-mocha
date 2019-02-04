@@ -1,0 +1,15 @@
+{
+  "name": "test-with-mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "DiuriVJ",
+  "license": "ISC"
+}
