@@ -6,7 +6,7 @@ class SortedList {
 
   add(item) {
     this.items.push(item)
-    this.items.sort((a , b)=>{a < b})
+    this.items.sort((a , b) => {a < b})
   }
 
   get(pos) {
@@ -17,7 +17,18 @@ class SortedList {
     }
   }
 
-  max() {}
+  max() {
+    let highest = 0
+    if (items.length === 0) {
+      return "Error: EmptySortedList"
+    }
+    this.items.map((index) => {
+      if (items[index] > highest) {
+        highest = items[index]
+      }
+    })
+    return highest
+  }
 
   min() {}
 
