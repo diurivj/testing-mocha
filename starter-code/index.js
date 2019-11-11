@@ -1,17 +1,49 @@
+/*jshint esversion: 6 */
+
 class SortedList {
-  constructor() {}
+  constructor() {
+    this.items = [];
+    this.length = 0;
+}
+  add(item) {
+    this.items.push(item);
+    this.length++;
+    this.items.sort((a, b) => (a - b));
+  }
 
-  add(item) {}
+  get(pos) {
+    if(pos < this.items.length+1){
+      return this.items[pos-1];
+    } else{
+      return new Error('OutOfBounds');
+    }
+  }
 
-  get(pos) {}
+  max() {
+    if(this.items.length === 0){
+      return new Error("EmptySortedList")
+    } else {
+      return Math.max.apply(null, this.items);
+    }
+  }
 
-  max() {}
+  min() {
+    if(this.items.length === 0){
+      return new Error("EmptySortedList")
+    } else {
+      return Math.min.apply(null, this.items);
+    }
+  }
 
-  min() {}
 
-  sum() {}
+  sum(a,b) {
+    return this.items.reduce((a,b) => a + b, 0) ;
+  }
 
-  avg() {}
+  avg() {
+    return this.items.reduce((a,b) => a + b, 0) / this.items.length ;
+
+  }
 }
 
 module.exports = SortedList
